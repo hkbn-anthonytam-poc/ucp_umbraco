@@ -4,7 +4,7 @@ COPY . .
 WORKDIR "/src/."
 RUN dotnet publish "ucp_umbraco.csproj" -c Release -o /app/publish
 
-FROM mcr.microsoft.com/dotnet/aspnet:5.0
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 EXPOSE 8080
 ENV ASPNETCORE_URLS=http://+:8080
