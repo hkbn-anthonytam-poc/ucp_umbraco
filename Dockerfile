@@ -1,5 +1,7 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
+COPY ["ucp_umbraco.csproj", "./"]
+RUN dotnet restore "ucp_umbraco.csproj"
 COPY . .
 WORKDIR "/src/."
 RUN dotnet publish "ucp_umbraco.csproj" -c Release -o /app/publish
